@@ -8,6 +8,10 @@ RUN curl -sS https://getcomposer.org/installer | \
 # Install unzip (needed by Composer for unzipping packages).
 RUN apt-get update -y \
   && apt-get install -y unzip
+  
+# Install git (needed by Composer for cloning dev packages).
+RUN apt-get update -y \
+  && apt-get install -y git
 
 # Generate an empty project from drupal/recommended-project.
 # @todo What happens if drupal/recommended-project changes to D9 in the future?
